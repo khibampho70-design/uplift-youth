@@ -11,7 +11,21 @@
     body{margin:0;padding:18px;font-family:"Segoe UI",Arial,sans-serif;background:var(--background);color:var(--text);line-height:1.65;transition:background .25s,color .25s;letter-spacing:.1px}
     button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.page-wrapper{max-width:1150px;margin:auto}
     .navbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;padding:16px 20px;background:#101a35;border:1px solid rgba(255,255,255,.08);border-radius:16px;margin-bottom:22px;box-shadow:var(--shadow);position:relative;z-index:10}
-    .brand{color:white;font-size:23px;font-weight:800;margin:0}.brand span{color:#8ca9ff}.nav-links{display:flex;align-items:center;flex-wrap:wrap;gap:5px}.nav-links a{color:#e6ebff;text-decoration:none;padding:9px 11px;border-radius:8px;font-size:14px;font-weight:bold;transition:background .2s,transform .2s}.nav-links a:hover{background:#26365d;color:white;transform:translateY(-2px)}.menu-toggle{display:none;background:#293d70;color:white;border:0;border-radius:9px;padding:7px 13px;font-size:23px;cursor:pointer}
+   .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+  font-size:23px;
+  font-weight:800;
+  margin:0;
+}
+
+.logo{
+  width:45px;
+  height:45px;
+  object-fit:contain;
+} .c.brand span{color:#8ca9ff}.nav-links{display:flex;align-items:center;flex-wrap:wrap;gap:5px}.nav-links a{color:#e6ebff;text-decoration:none;padding:9px 11px;border-radius:8px;font-size:14px;font-weight:bold;transition:background .2s,transform .2s}.nav-links a:hover{background:#26365d;color:white;transform:translateY(-2px)}.menu-toggle{display:none;background:#293d70;color:white;border:0;border-radius:9px;padding:7px 13px;font-size:23px;cursor:pointer}
     .button{display:inline-block;background:var(--primary);color:white;padding:11px 18px;border:0;border-radius:9px;font-weight:bold;font-size:15px;text-decoration:none;text-align:center;cursor:pointer;box-shadow:0 4px 12px rgba(56,103,245,.15);transition:transform .2s,box-shadow .2s,background .2s}.button:hover{background:var(--primary-dark);transform:translateY(-2px)}.button:active{transform:scale(.97)}.button-secondary{background:#e9edff;color:#2849b2}.button-secondary:hover{background:#dce4ff}.button:focus-visible,.nav-links a:focus-visible,.menu-toggle:focus-visible{outline:3px solid #8ca9ff;outline-offset:3px}.theme-row{display:flex;justify-content:flex-end;margin:0 0 16px}
     .hero{position:relative;overflow:hidden;padding:58px 35px;border-radius:20px;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.15),transparent 25%),linear-gradient(125deg,#101a35,#315bd9 65%,#7958e8);color:white;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.08);right:-65px;top:-85px}.hero-content{position:relative;z-index:1;max-width:700px}.hero-label{display:inline-block;padding:5px 12px;border:1px solid rgba(255,255,255,.3);border-radius:30px;font-size:13px;margin-bottom:12px;background:rgba(255,255,255,.1)}.hero h1{font-size:clamp(34px,6vw,54px);line-height:1.15;letter-spacing:-1.5px;margin:5px 0 15px}.hero p{color:#e5eaff;max-width:570px;font-size:17px;line-height:1.8}.hero .button{background:white;color:#244bd0;margin-top:10px}.hero .button:hover{background:#edf1ff}
     main{width:100%}.card{position:relative;background:var(--surface);padding:25px;margin-top:22px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);transition:box-shadow .2s}.card:hover{box-shadow:0 12px 35px rgba(26,43,82,.1)}.card h2{color:var(--primary);font-size:23px;margin:0 0 12px;letter-spacing:-.4px}.card h3{color:var(--text)}.section-description{color:var(--muted);margin-top:-4px;line-height:1.7}hr{border:0;border-top:1px solid var(--border);margin:22px 0}
@@ -35,7 +49,10 @@
 <body>
 <div class="page-wrapper">
   <nav class="navbar">
-    <h2 class="brand">Uplift <span>Youth</span></h2>
+    <div class="brand">
+  <img src="Project%20_uplift%20_icon.png" alt="Uplift Youth logo" class="logo">
+  <span>Uplift Youth</span>
+</div>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a><a href="#learn">Learn</a><a href="#quiz">Maths Quiz</a><a href="#opportunities">Opportunities</a><a href="#suggest">Suggest</a><a href="#dashboard">Dashboard</a><a href="#community">Community</a><a href="#achievements">Badges</a><a href="#certificate">Certificate</a><a href="#leaderboard">Leaderboard</a>
