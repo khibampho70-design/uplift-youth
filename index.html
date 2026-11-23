@@ -72,13 +72,24 @@
     <section class="card" id="learn"><h2>📚 Learn New Skills</h2><p>Start learning website development using free educational resources.</p><a class="button" href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank" rel="noopener noreferrer">Explore Free Coding Lessons</a></section>
     <section class="card" id="quiz"><h2>🧠 Interactive Maths Quiz</h2><p class="section-description">Test your Maths knowledge and see how much you've learned!</p><div id="quizQuestionArea"><h3 id="quizQuestionNumber">Question 1 of 5</h3><h3 id="quizQuestion">Loading question...</h3><div id="quizOptions"></div><p id="quizFeedback" aria-live="polite"></p><button class="button" type="button" id="quizNextButton" onclick="nextQuizQuestion()" hidden>Next Question →</button></div><div id="quizResult" hidden><h3>🏆 Quiz Completed!</h3><p id="quizFinalScore"></p><p id="quizFinalMessage"></p><button class="button" type="button" onclick="restartQuiz()">Try Again 🔄</button></div></section>
     <section class="card"><h2>🚀 Grow Your Future</h2><p>Learning, creativity and persistence can help you prepare for future opportunities.</p><ul><li>Learn digital skills.</li><li>Build personal projects.</li><li>Discover your interests.</li><li>Practise solving problems.</li></ul></section>
-    <section class="card" id="opportunities"><h2>🌟 Explore Opportunities</h2><p class="section-description">Explore learning resources and suggested activities. Check programme details before applying.</p><label for="opportunitySearch">🔎 Search opportunities:</label><div class="search-actions"><input type="search" id="opportunitySearch" placeholder="Try coding, drawing or design..." oninput="filterAndSearch()"><button class="button button-secondary" type="button" onclick="clearOpportunitySearch()">Clear</button></div><label for="category">Choose a category:</label><select id="category" onchange="filterAndSearch()"><option value="all">All opportunities</option><option value="coding">Coding</option><option value="creative">Creative skills</option><option value="volunteering">Volunteering</option></select><p id="searchMessage" aria-live="polite">Showing all opportunities.</p>
-      <div class="opportunity" data-category="creative"><span class="tag">Creative skills</span><h3>🎨 Explore Creative Arts</h3><p>Discover drawing, painting, design and other creative activities.</p><a href="https://wcedeportal.co.za/" target="_blank" rel="noopener noreferrer">Explore WCED ePortal</a></div>
-      <div class="opportunity" data-category="creative"><span class="tag">Digital design</span><h3>🖌️ Learn Graphic Design</h3><p>Explore colours, layouts, posters and digital designs.</p><a href="https://www.canva.com/designschool/" target="_blank" rel="noopener noreferrer">Explore Canva Design School</a></div>
-      <div class="opportunity" data-category="creative"><span class="tag">Creative writing</span><h3>✍️ Young Writers Club</h3><p>Explore poetry, storytelling and creative writing. Check current availability and eligibility.</p><a href="https://gautengauthors.org/youth" target="_blank" rel="noopener noreferrer">Explore Gauteng Authors</a></div>
-      <div class="opportunity" data-category="coding"><span class="tag">Coding</span><h3>💻 Learn Website Development</h3><p>Explore free HTML, CSS and JavaScript learning resources.</p><a href="https://www.freecodecamp.org/learn/" target="_blank" rel="noopener noreferrer">Visit freeCodeCamp</a></div>
-      <div class="opportunity" data-category="creative"><span class="tag">Creative skills</span><h3>🎭 Develop Your Creativity</h3><p>Practise drawing, writing, design or another creative skill.</p><p class="section-description">Suggested activity, not a verified external programme.</p></div>
-      <div class="opportunity" data-category="volunteering"><span class="tag">Volunteering</span><h3>🤝 Help Your Community</h3><p>Ask a trusted adult about safe, supervised community projects.</p><p class="section-description">Suggested activity, not a confirmed volunteering vacancy.</p></div><p id="filterMessage" aria-live="polite"></p>
+    <section class="card" id="opportunities"><h2>🌟 Explore Opportunities</h2><p class="section-description">Explore learning resources and suggested activities. Check programme details before applying.</p><label for="countrySelect">🌍 Choose your country:</label>
+<select id="countrySelect" onchange="filterAndSearch()">
+  <option value="all">All launch countries</option>
+  <option value="south-africa">South Africa</option>
+  <option value="nigeria">Nigeria</option>
+  <option value="kenya">Kenya</option>
+  <option value="india">India</option>
+  <option value="united-kingdom">United Kingdom</option>
+</select>
+
+<label for="opportunitySearch">Search opportunities:</label>
+      <div class="search-actions"><input type="search" id="opportunitySearch" placeholder="Try coding, drawing or design..." oninput="filterAndSearch()"><button class="button button-secondary" type="button" onclick="clearOpportunitySearch()">Clear</button></div><label for="category">Choose a category:</label><select id="category" onchange="filterAndSearch()"><option value="all">All opportunities</option><option value="coding">Coding</option><option value="creative">Creative skills</option><option value="volunteering">Volunteering</option></select><p id="searchMessage" aria-live="polite">Showing all opportunities.</p>
+     <div class="opportunity" data-category="creative" data-country="south-africa"> <span class="tag">Creative skills</span><h3>🎨 Explore Creative Arts</h3><p>Discover drawing, painting, design and other creative activities.</p><a href="https://wcedeportal.co.za/" target="_blank" rel="noopener noreferrer">Explore WCED ePortal</a></div>
+    <div class="opportunity" data-category="creative" data-country="all">  <span class="tag">Digital design</span><h3>🖌️ Learn Graphic Design</h3><p>Explore colours, layouts, posters and digital designs.</p><a href="https://www.canva.com/designschool/" target="_blank" rel="noopener noreferrer">Explore Canva Design School</a></div>
+   <div class="opportunity" data-category="creative" data-country="south-africa">   <span class="tag">Creative writing</span><h3>✍️ Young Writers Club</h3><p>Explore poetry, storytelling and creative writing. Check current availability and eligibility.</p><a href="https://gautengauthors.org/youth" target="_blank" rel="noopener noreferrer">Explore Gauteng Authors</a></div>
+     <div class="opportunity" data-category="coding" data-country="all"> <span class="tag">Coding</span><h3>💻 Learn Website Development</h3><p>Explore free HTML, CSS and JavaScript learning resources.</p><a href="https://www.freecodecamp.org/learn/" target="_blank" rel="noopener noreferrer">Visit freeCodeCamp</a></div>
+     <div class="opportunity" data-category="creative" data-country="all"> <span class="tag">Creative skills</span><h3>🎭 Develop Your Creativity</h3><p>Practise drawing, writing, design or another creative skill.</p><p class="section-description">Suggested activity, not a verified external programme.</p></div>
+    <div class="opportunity" data-category="volunteering" data-country="all">  <span class="tag">Volunteering</span><h3>🤝 Help Your Community</h3><p>Ask a trusted adult about safe, supervised community projects.</p><p class="section-description">Suggested activity, not a confirmed volunteering vacancy.</p></div><p id="filterMessage" aria-live="polite"></p>
     </section>
     <section class="card" id="suggest"><h2>💡 Suggest an Opportunity</h2><p class="section-description">Practise entering details of a useful course or programme.</p><form onsubmit="submitSuggestion(event)"><label for="opportunityName">Opportunity name:</label><input id="opportunityName" type="text" placeholder="Example: Free coding course" maxlength="100" required><label for="suggestionCategory">Category:</label><select id="suggestionCategory"><option value="Coding">Coding</option><option value="Creative skills">Creative skills</option><option value="Volunteering">Volunteering</option><option value="Other">Other</option></select><label for="opportunityLink">Public website link (optional):</label><input id="opportunityLink" type="url" placeholder="https://example.org"><button class="button" type="submit">Submit Practice Suggestion</button></form><p id="suggestionMessage" aria-live="polite"></p><p class="section-description">Practice only: suggestions are not sent or saved to a server.</p></section>
     <section class="card" id="progress"><h2>📈 My Learning Progress</h2><p class="section-description">Set your learning goals and track your activities.</p><label for="learningGoal">My learning goal:</label><input type="text" id="learningGoal" placeholder="Example: Improve Mathematics"><label for="learningSkill">Skill I want to learn:</label><input type="text" id="learningSkill" placeholder="Example: Website development"><button class="button" type="button" onclick="saveGoal()">Save My Goals</button><p id="goalMessage" aria-live="polite"></p><hr><h3>My Completed Activities</h3><p id="progressCount">0 of 3 activities completed</p><div class="dashboard-progress-track"><div id="progressBar" class="dashboard-progress-fill"></div></div><p id="progressPercentage">0% completed</p><div id="activityList"></div></section>
@@ -102,7 +113,33 @@
   function goToOpportunities(){document.getElementById("opportunities").scrollIntoView({behavior:"smooth"})}
 
   // SEARCH AND CATEGORY FILTER
-  function filterAndSearch(){const category=document.getElementById("category").value;const searchText=document.getElementById("opportunitySearch").value.toLowerCase().trim();const opportunities=document.querySelectorAll(".opportunity");let found=0;opportunities.forEach(item=>{const categoryMatches=category==="all"||item.dataset.category===category;const textMatches=item.textContent.toLowerCase().includes(searchText);const matches=categoryMatches&&textMatches;item.hidden=!matches;if(matches)found++});const message=found===1?"1 opportunity found.":found+" opportunities found.";document.getElementById("searchMessage").textContent=message;document.getElementById("filterMessage").textContent=message}
+ function filterAndSearch(){
+  const category = document.getElementById("category").value;
+  const country = document.getElementById("countrySelect").value;
+  const searchText = document.getElementById("opportunitySearch").value.toLowerCase().trim();
+  const opportunities = document.querySelectorAll(".opportunity");
+  let found = 0;
+
+  opportunities.forEach(item => {
+    const categoryMatches = category === "all" || item.dataset.category === category;
+    const countryMatches = country === "all" ||
+      item.dataset.country === country ||
+      item.dataset.country === "all";
+    const textMatches = item.textContent.toLowerCase().includes(searchText);
+
+    const matches = categoryMatches && countryMatches && textMatches;
+    item.hidden = !matches;
+
+    if(matches) found++;
+  });
+
+  const message = found === 1
+    ? "1 opportunity found."
+    : found + " opportunities found.";
+
+  document.getElementById("searchMessage").textContent = message;
+  document.getElementById("filterMessage").textContent = message;
+} const category=document.getElementById("category").value;const searchText=document.getElementById("opportunitySearch").value.toLowerCase().trim();const opportunities=document.querySelectorAll(".opportunity");let found=0;opportunities.forEach(item=>{const categoryMatches=category==="all"||item.dataset.category===category;const textMatches=item.textContent.toLowerCase().includes(searchText);const matches=categoryMatches&&textMatches;item.hidden=!matches;if(matches)found++});const message=found===1?"1 opportunity found.":found+" opportunities found.";document.getElementById("searchMessage").textContent=message;document.getElementById("filterMessage").textContent=message}
   function clearOpportunitySearch(){document.getElementById("opportunitySearch").value="";document.getElementById("category").value="all";filterAndSearch()}
 
   // SUGGESTION FORM
