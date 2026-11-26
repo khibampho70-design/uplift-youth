@@ -112,8 +112,8 @@
   const trackerActivities=["Practise Mathematics","Learn a new skill","Work on a personal project"];
   function goToOpportunities(){document.getElementById("opportunities").scrollIntoView({behavior:"smooth"})}
 
-  // SEARCH AND CATEGORY FILTER
- function filterAndSearch(){
+// SEARCH AND CATEGORY FILTER
+function filterAndSearch(){
   const category = document.getElementById("category").value;
   const country = document.getElementById("countrySelect").value;
   const searchText = document.getElementById("opportunitySearch").value.toLowerCase().trim();
@@ -121,13 +121,19 @@
   let found = 0;
 
   opportunities.forEach(item => {
-    const categoryMatches = category === "all" || item.dataset.category === category;
-    const countryMatches = country === "all" ||
+    const categoryMatches =
+      category === "all" || item.dataset.category === category;
+
+    const countryMatches =
+      country === "all" ||
       item.dataset.country === country ||
       item.dataset.country === "all";
-    const textMatches = item.textContent.toLowerCase().includes(searchText);
+
+    const textMatches =
+      item.textContent.toLowerCase().includes(searchText);
 
     const matches = categoryMatches && countryMatches && textMatches;
+
     item.hidden = !matches;
 
     if(matches) found++;
@@ -139,8 +145,15 @@
 
   document.getElementById("searchMessage").textContent = message;
   document.getElementById("filterMessage").textContent = message;
-} const category=document.getElementById("category").value;const searchText=document.getElementById("opportunitySearch").value.toLowerCase().trim();const opportunities=document.querySelectorAll(".opportunity");let found=0;opportunities.forEach(item=>{const categoryMatches=category==="all"||item.dataset.category===category;const textMatches=item.textContent.toLowerCase().includes(searchText);const matches=categoryMatches&&textMatches;item.hidden=!matches;if(matches)found++});const message=found===1?"1 opportunity found.":found+" opportunities found.";document.getElementById("searchMessage").textContent=message;document.getElementById("filterMessage").textContent=message}
-  function clearOpportunitySearch(){document.getElementById("opportunitySearch").value="";document.getElementById("category").value="all";filterAndSearch()}
+}
+
+function clearOpportunitySearch(){
+  document.getElementById("opportunitySearch").value = "";
+  document.getElementById("category").value = "all";
+  document.getElementById("countrySelect").value = "all";
+  filterAndSearch();
+}
+  
 
   // SUGGESTION FORM
   function submitSuggestion(event){event.preventDefault();const name=document.getElementById("opportunityName").value.trim();const category=document.getElementById("suggestionCategory").value;if(!name)return;document.getElementById("suggestionMessage").textContent="Practice suggestion received: "+name+" ("+category+"). It has not been saved or sent.";event.target.reset()}
